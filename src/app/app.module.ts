@@ -17,19 +17,24 @@ import { RegistroAlumnosComponent } from './partials/registro-alumnos/registro-a
 import { RegistroMaestrosComponent } from './partials/registro-maestros/registro-maestros.component';
 
 //Angular material
-import {MatCardModule} from '@angular/material/card';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatNativeDateModule, MAT_DATE_LOCALE} from '@angular/material/core';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatSelectModule} from '@angular/material/select';
-import {MatTableModule} from '@angular/material/table';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
+
 // Paginación
-import {MatPaginatorIntl, MatPaginatorModule} from '@angular/material/paginator';
+import {
+  MatPaginatorIntl,
+  MatPaginatorModule,
+} from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 //Para el paginator en español
 import { getSpanishPaginatorIntl } from './shared/spanish-paginator-intl';
 
@@ -63,7 +68,7 @@ import { SidebarComponent } from './partials/sidebar/sidebar.component';
     AlumnosScreenComponent,
     MaestrosScreenComponent,
     NavbarUserComponent,
-    SidebarComponent
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
@@ -84,14 +89,15 @@ import { SidebarComponent } from './partials/sidebar/sidebar.component';
     MatSelectModule,
     MatSidenavModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSortModule,
   ],
   providers: [
     CookieService,
     { provide: MAT_DATE_LOCALE, useValue: 'es-MX' },
     { provide: MatPaginatorIntl, useValue: getSpanishPaginatorIntl() },
-    provideNgxMask()
+    provideNgxMask(),
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
